@@ -1,8 +1,0 @@
-../App/Inc/imu_ex.h:35:8:float ImuEx::lpf_update(FirstOrderLPF*, float)	24	static
-../App/Inc/imu_ex.h:16:7:ImuEx::ImuEx()	16	static
-../App/Src/imu_ex.cpp:24:6:bool ImuEx::Init()	40	static
-../App/Src/imu_ex.cpp:61:6:bool ImuEx::Update()	120	static
-../App/Src/imu_ex.cpp:141:6:void ImuEx::WhoAmI()	40	static
-../App/Src/imu_ex.cpp:156:7:float GetAlt()	4	static
-../App/Src/imu_ex.cpp:160:1:void __static_initialization_and_destruction_0()	8	static
-../App/Src/imu_ex.cpp:160:1:cpp)	8	static

@@ -1,8 +1,0 @@
-../App/Inc/application.h:42:7:bool Application::IsArmed()	1
-../App/Src/file.cpp:34:9:uint8_t get_next_log_number()	14
-../App/Src/file.cpp:102:9:FRESULT create_log_file()	2
-../App/Src/file.cpp:125:6:void clearlog()	6
-../App/Src/file.cpp:156:6:void downlog()	15
-../App/Src/file.cpp:263:6:void file_log_write()	21
-../App/Src/file.cpp:368:6:void file_clearlog()	1
-../App/Src/file.cpp:374:6:void file_downlog()	1

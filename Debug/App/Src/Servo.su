@@ -1,2 +1,0 @@
-../App/Src/Servo.cpp:30:13:void Init()	8	static
-../App/Src/Servo.cpp:36:13:void Write(float*)	16	static

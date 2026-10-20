@@ -1,3 +1,0 @@
-../App/Inc/sensor.h:35:20:void println()	1
-../App/Inc/sensor.h:37:20:void println(const char*)	1
-../App/Src/sensor.cpp:9:6:void Adafruit_Sensor::printSensorDetails()	31

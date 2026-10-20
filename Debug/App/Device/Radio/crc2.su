@@ -1,3 +1,0 @@
-../App/Device/Radio/crc2.c:13:6:crc2_init	16	static
-../App/Device/Radio/crc2.c:35:9:crc2_calculate	24	static
-../App/Device/Radio/crc2.c:47:9:crc2_calculate2	24	static

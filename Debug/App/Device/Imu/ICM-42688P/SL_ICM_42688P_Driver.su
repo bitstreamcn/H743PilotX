@@ -1,9 +1,0 @@
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:27:13:sl_delay	16	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:33:15:SL_ICM_42688P_Check	16	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:48:15:SL_ICM_42688P_Config	16	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:190:14:SL_ICM_42688P_TimeStamp_Read	16	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:205:5:SL_ICM_42688P_RawData_Read	40	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:373:15:SL_ICM_42688P_POWER_DOWN	16	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:387:15:SL_ICM_42688P_SOFT_RESET	16	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:405:15:SL_ICM_42688P_I2c_Spi_Write	128	static
-../App/Device/Imu/ICM-42688P/SL_ICM_42688P_Driver.c:436:15:SL_ICM_42688P_I2c_Spi_Read	128	static

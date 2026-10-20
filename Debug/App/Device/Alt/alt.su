@@ -1,5 +1,0 @@
-../App/Device/Alt/alt.c:15:6:Alt_Init	24	static
-../App/Device/Alt/alt.c:34:6:Alt_updateAccelUp	24	static
-../App/Device/Alt/alt.c:43:6:Alt_updateBarAlt	16	static
-../App/Device/Alt/alt.c:47:7:Alt_getH	8	static
-../App/Device/Alt/alt.c:48:7:Alt_getV	8	static

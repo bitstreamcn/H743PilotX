@@ -1,7 +1,0 @@
-../App/Src/car.cpp:16:6:void Car::Loop()	12
-../App/Src/car.cpp:65:6:void Car::setLedOn()	1
-../App/Src/car.cpp:69:6:void Car::setLedOff()	1
-../App/Src/car.cpp:73:6:void Car::setBeepOn()	1
-../App/Src/car.cpp:77:6:void Car::setBeepOff()	1
-../App/Src/car.cpp:81:6:void Car::setMotor(int)	1
-../App/Src/car.cpp:85:6:void Car::setServo(int)	1
