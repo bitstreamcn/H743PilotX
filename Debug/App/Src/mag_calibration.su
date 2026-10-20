@@ -1,0 +1,4 @@
+../App/Src/mag_calibration.cpp:34:6:void MagCalib_CollectData(float, float, float)	24	static
+../App/Src/mag_calibration.cpp:63:12:int Matrix4x4_Inverse(Matrix4x4*, Matrix4x4*)	160	static
+../App/Src/mag_calibration.cpp:98:13:void Matrix4x4_Mul_Vector4(Matrix4x4*, Vector4*, Vector4*)	32	static
+../App/Src/mag_calibration.cpp:109:5:int MagCalib_Compute(float*, float*, float*, float*, float*, float*)	192	static

@@ -1,0 +1,67 @@
+
+#include "imu.h"
+#include <stdlib.h>
+#include <string.h>
+#include <getopt.h>
+#include <sys/time.h>
+#include <rtthread.h>
+#include "rtdevice.h"
+#include "aic_core.h"
+#include "aic_hal_gpio.h"
+
+
+
+static const char sopts[] = "idh";
+static const struct option lopts[] = {
+    {"init",       no_argument, NULL, 'i'},
+    {"data",     no_argument, NULL, 'd'},
+    {"help",               no_argument, NULL, 'u'},
+    {0, 0, 0, 0}
+};
+
+
+static void test_imu_usage(char *program)
+{
+    printf("Usage: %s [options]\n", program);
+    printf("\t -i, --init\t\tinit imu device\n");
+    printf("\t -d, --data\t\tget imu update data\n");
+    printf("\t -h, --help \n");
+    printf("\n");
+}
+
+
+int cmd_test_imu(int argc, char **argv)
+{
+    int c = 0;
+    if (argc < 2) {
+        test_imu_usage(argv[0]);
+        return -1;
+    }
+
+    optind = 0;
+
+    while ((c = getopt_long(argc, argv, sopts, lopts, NULL)) != -1) {
+        switch (c) {
+        case 'i':
+            printf("imu init...\n");
+            imu_init();
+            break;
+        case 'd':
+            printf("imu update...\n");
+            imu_update();
+            printf("ax=%f ay=%f az=%f gx=%f gy=%f gz=%f\n", imu.state.ax, imu.state.ay, imu.state.az, imu.state.gx, imu.state.gy, imu.state.gz);
+            break;
+        case 'h':
+            printf("help...\n");
+        default:
+            test_imu_usage(argv[0]);
+            return 0;
+        }
+    }
+
+    return 0;
+}
+
+
+MSH_CMD_EXPORT_ALIAS(cmd_test_imu, test_imu, imu device sample);
+

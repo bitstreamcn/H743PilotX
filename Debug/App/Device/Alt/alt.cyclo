@@ -1,0 +1,5 @@
+../App/Device/Alt/alt.c:15:6:Alt_Init	1
+../App/Device/Alt/alt.c:34:6:Alt_updateAccelUp	2
+../App/Device/Alt/alt.c:43:6:Alt_updateBarAlt	1
+../App/Device/Alt/alt.c:47:7:Alt_getH	1
+../App/Device/Alt/alt.c:48:7:Alt_getV	1

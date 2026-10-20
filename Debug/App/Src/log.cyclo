@@ -1,0 +1,13 @@
+../App/Src/log.cpp:30:6:)	1
+../App/Src/log.cpp:41:6:)	1
+../App/Src/log.cpp:52:6:)	1
+../App/Src/log.cpp:64:6:static void Log::Init()	1
+../App/Src/log.cpp:70:6:static void Log::Pause()	1
+../App/Src/log.cpp:75:6:static void Log::Resume()	1
+../App/Src/log.cpp:80:6:static void Log::write(const char*, const char*, va_list)	5
+../App/Src/log.cpp:150:6:void LogInit()	1
+../App/Src/log.cpp:155:6:)	1
+../App/Src/log.cpp:162:6:)	1
+../App/Src/log.cpp:170:6:)	1
+../App/Src/log.cpp:179:6:void LogPause()	1
+../App/Src/log.cpp:183:6:void LogResume()	1

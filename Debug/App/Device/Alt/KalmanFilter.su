@@ -1,0 +1,8 @@
+../App/Device/Alt/KalmanFilter.c:33:6:KalmanFilter_setup2	8	static
+../App/Device/Alt/KalmanFilter.c:38:6:KalmanFilter_setup1	16	static
+../App/Device/Alt/KalmanFilter.c:43:6:KalmanFilter_setup	24	static
+../App/Device/Alt/KalmanFilter.c:67:6:KalmanFilter_propagate	72	static
+../App/Device/Alt/KalmanFilter.c:119:6:KalmanFilter_update	40	static
+../App/Device/Alt/KalmanFilter.c:148:6:KalmanFilter_update1	16	static
+../App/Device/Alt/KalmanFilter.c:153:7:KalmanFilter_getH	4	static
+../App/Device/Alt/KalmanFilter.c:154:7:KalmanFilter_getV	4	static

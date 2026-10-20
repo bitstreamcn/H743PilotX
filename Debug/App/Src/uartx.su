@@ -1,0 +1,5 @@
+../App/Src/uartx.cpp:39:6:void HAL_UART_TxCpltCallback(UART_HandleTypeDef*)	16	static
+../App/Src/uartx.cpp:52:9:uint8_t UART1_DMA_Send(uint8_t*, uint16_t)	32	static
+../App/Src/uartx.cpp:111:6:void UART1_DMA_Recv_Start()	16	static
+../App/Src/uartx.cpp:128:6:void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef*, uint16_t)	24	static
+../App/Src/uartx.cpp:173:6:bool UART1_Recv(uint8_t*, uint16_t, uint16_t*)	48	static

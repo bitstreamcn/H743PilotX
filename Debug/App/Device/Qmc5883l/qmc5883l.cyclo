@@ -1,0 +1,5 @@
+../App/Device/Qmc5883l/qmc5883l.cpp:30:19:HAL_StatusTypeDef IIC_Write_Byte(uint16_t, uint8_t)	2
+../App/Device/Qmc5883l/qmc5883l.cpp:39:19:HAL_StatusTypeDef IIC_ReadMulByte(uint16_t, uint8_t*, uint16_t)	2
+../App/Device/Qmc5883l/qmc5883l.cpp:49:6:void QMC5883L_Init()	1
+../App/Device/Qmc5883l/qmc5883l.cpp:70:6:bool QMC5883L_GetData(float*)	3
+../App/Device/Qmc5883l/qmc5883l.cpp:100:6:bool QMC5883L_GetAngle(float*)	6

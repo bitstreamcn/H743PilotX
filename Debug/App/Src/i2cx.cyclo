@@ -1,0 +1,3 @@
+../App/Src/i2cx.cpp:18:6:void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef*)	1
+../App/Src/i2cx.cpp:25:6:void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef*)	1
+../App/Src/i2cx.cpp:35:6:void HAL_I2C_ErrorCallback(I2C_HandleTypeDef*)	1

@@ -1,0 +1,14 @@
+../App/Device/Motor/dshot.c:55:6:dshot_init	16	static
+../App/Device/Motor/dshot.c:67:6:dshot_write	16	static
+../App/Device/Motor/dshot.c:81:17:dshot_choose_type	16	static
+../App/Device/Motor/dshot.c:97:13:dshot_set_timer	32	static
+../App/Device/Motor/dshot.c:124:13:dshot_dma_tc_callback	24	static
+../App/Device/Motor/dshot.c:149:13:dshot_put_tc_callback_function	4	static
+../App/Device/Motor/dshot.c:158:13:dshot_start_pwm	16	static
+../App/Device/Motor/dshot.c:170:17:dshot_prepare_packet	32	static
+../App/Device/Motor/dshot.c:193:17:pwm_to_dshot	16	static
+../App/Device/Motor/dshot.c:202:17:floatToDshotThrottle	16	static
+../App/Device/Motor/dshot.c:211:13:dshot_prepare_dmabuffer	24	static
+../App/Device/Motor/dshot.c:235:13:dshot_prepare_dmabuffer_all	16	static
+../App/Device/Motor/dshot.c:243:13:dshot_dma_start	16	static
+../App/Device/Motor/dshot.c:281:13:dshot_enable_dma_request	4	static

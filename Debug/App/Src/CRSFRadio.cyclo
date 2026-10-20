@@ -1,0 +1,13 @@
+../App/Inc/application.h:44:19:eFlightMode Application::Mode()	1
+../App/Src/CRSFRadio.cpp:151:12:int Init()	6
+../App/Src/CRSFRadio.cpp:238:13:void Loop()	21
+../App/Src/CRSFRadio.cpp:429:6:void OnPacketIn()	4
+../App/Src/CRSFRadio.cpp:441:6:void SendFlightMode()	1
+../App/Src/CRSFRadio.cpp:463:6:void OnPacketFlightMode(eFlightMode)	1
+../App/Src/CRSFRadio.cpp:470:6:void OnPacketChannels()	18
+../App/Src/CRSFRadio.cpp:590:13:void GetData(int*, int*, int*, int*, int*, int*, int*, int*)	3
+../App/Src/CRSFRadio.cpp:627:6:void OnTxDone()	1
+../App/Src/CRSFRadio.cpp:633:6:void OnRxDone(uint8_t*, uint16_t, int16_t, int8_t)	3
+../App/Src/CRSFRadio.cpp:654:6:void OnTxTimeout()	1
+../App/Src/CRSFRadio.cpp:660:6:void OnRxTimeout()	1
+../App/Src/CRSFRadio.cpp:666:6:void OnRxError()	1

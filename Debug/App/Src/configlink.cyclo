@@ -1,0 +1,8 @@
+../App/Inc/application.h:42:7:bool Application::IsArmed()	1
+../App/Inc/application.h:44:19:eFlightMode Application::Mode()	1
+../App/Src/configlink.cpp:17:1:ConfigLink::ConfigLink()	1
+../App/Src/configlink.cpp:22:1:ConfigLink::~ConfigLink()	1
+../App/Src/configlink.cpp:27:6:void ConfigLink::RecvLoop()	23
+../App/Src/configlink.cpp:147:6:void ConfigLink::ConfirmSet(char*)	1
+../App/Src/configlink.cpp:154:6:void ConfigLink::ConfirmSave()	1
+../App/Src/configlink.cpp:161:6:void ConfigLink::SendConfig(int)	3

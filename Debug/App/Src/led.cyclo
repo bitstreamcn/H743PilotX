@@ -1,0 +1,3 @@
+../App/Src/led.cpp:12:6:void Led::Error()	2
+../App/Src/led.cpp:21:6:void Led::Clear()	2
+../App/Src/led.cpp:30:6:void Led::Fail()	1

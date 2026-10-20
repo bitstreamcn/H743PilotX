@@ -1,0 +1,8 @@
+../App/Device/Flash/BL24C256A.c:23:6:wait_for_eeprom_ready	8	static
+../App/Device/Flash/BL24C256A.c:30:6:eeprom_init	4	static
+../App/Device/Flash/BL24C256A.c:35:6:eeprom_read	48	static
+../App/Device/Flash/BL24C256A.c:83:6:eeprom_write_succ_callback	4	static
+../App/Device/Flash/BL24C256A.c:88:6:eeprom_write_fail_callback	4	static
+../App/Device/Flash/BL24C256A.c:93:6:eeprom_write	48	static
+../App/Device/Flash/BL24C256A.c:145:9:eeprom_read_byte	48	static
+../App/Device/Flash/BL24C256A.c:172:6:eeprom_write_byte	48	static
