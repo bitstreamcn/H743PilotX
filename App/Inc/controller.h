@@ -20,6 +20,7 @@ public:
 	void Init();
 	void PID_Update();
 	void PID_Calculation();
+	void climb();
 
 	float motor_speeds[4];
 	float yaw_heading_reference = 0;

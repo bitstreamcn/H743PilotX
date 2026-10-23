@@ -617,10 +617,13 @@ static void GetData(int *_Roll, int *_Pitch, int *_Throttle, int *_Yaw, int *_Mo
 	}
 
     //前避障
-    if (app.GetFrontDistance() < 2000 && app.GetFrontDistance() > 200)
+	//改为在controller中实现，修正遥控器失效
+	/*
+    if (app.GetFrontDistance() < 2.0 && app.GetFrontDistance() > 0.2 && cfg.param.sys_fly_mode != 3)
     {
-    	//*_Pitch = 1400;
+    	*_Pitch = 1400;
     }
+    */
 }
 
 

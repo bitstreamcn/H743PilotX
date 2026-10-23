@@ -856,7 +856,7 @@ void Application::RadioUpdate()
 		BtnLightDownCount++;
     }
 
-    if (mode == MODE_CAR)
+    if (mode == MODE_CAR || cfg.param.sys_fly_mode == 3)
     {
     	int value = -1 * (1500 - CrsfRoll) * 1.0f / 500 * 90 + 90;
     	int speed = (1500 - CrsfPitch) * 1.0f / 500 * 100;
@@ -876,6 +876,16 @@ void Application::RadioUpdate()
     	{
     		car.setServo(value);
     	}
+
+    	//前避障
+    	if (GetFrontDistance() < 2.0 && GetFrontDistance() > 0.2)
+    	{
+    		if (speed < 0)
+    		{
+    			speed = 0;
+    		}
+    	}
+
     	if (pitIdle || !IsConnect)
     	{
     		car.setMotor(0);
@@ -1138,8 +1148,14 @@ void Application::Control()
 	}
 
 	//计算pid
-	controller.PID_Calculation();
-
+	if (cfg.param.sys_fly_mode == 3)
+	{
+		controller.climb();
+	}
+	else
+	{
+		controller.PID_Calculation();
+	}
 	Servo.Write(controller.motor_speeds);
 }
 

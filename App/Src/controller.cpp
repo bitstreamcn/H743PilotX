@@ -552,20 +552,32 @@ void Controller::PID_Calculation()
 		//pitch_des += acc_pitch;
 		//PMW光流控制
 		//float pmw_pitch = -1 * control(&PIDPmw, bottom.y, 0, remain_dt);
-		if(  fabsf(dy_body) > 2 && gps_data.fixType >= 3 && gps_data.numSV >= 8 && gps_data.hAcc < 1000 && (HAL_GetTick() - gps_update_tick) < 1000)
+
+		if (app.GetFrontDistance() < 2.0 && app.GetFrontDistance() > 0.2)
 		{
-			float gps_pitch = -1 * control(&PIDGps, dy_body, 0, remain_dt);
-			gps_pitch = constrain(gps_pitch, -10, 10);
-			pitch_des += gps_pitch;
-			gpsctl = true;
+			//前避障
+			if (pitch_des < 5)
+			{
+				pitch_des = 5;
+			}
 		}
 		else
 		{
-			float pmw_pitch = -1 * control(&PIDPmw, vel_y, 0, remain_dt);
-			//控制限幅
-			pmw_pitch = constrain(pmw_pitch, -20, 20);
-			//Log::I("pmw_pitch:%f - %f", bottom.y, pmw_pitch);
-			pitch_des += pmw_pitch;
+			if(  fabsf(dy_body) > 2 && gps_data.fixType >= 3 && gps_data.numSV >= 8 && gps_data.hAcc < 1000 && (HAL_GetTick() - gps_update_tick) < 1000)
+			{
+				float gps_pitch = -1 * control(&PIDGps, dy_body, 0, remain_dt);
+				gps_pitch = constrain(gps_pitch, -10, 10);
+				pitch_des += gps_pitch;
+				gpsctl = true;
+			}
+			else
+			{
+				float pmw_pitch = -1 * control(&PIDPmw, vel_y, 0, remain_dt);
+				//控制限幅
+				pmw_pitch = constrain(pmw_pitch, -20, 20);
+				//Log::I("pmw_pitch:%f - %f", bottom.y, pmw_pitch);
+				pitch_des += pmw_pitch;
+			}
 		}
 	}
 
@@ -760,4 +772,94 @@ void Controller::PID_Calculation()
 }
 
 
+void Controller::climb()
+{
+	int _CrsfRoll = 1500;
+	int _CrsfPitch = 1500;
+	int _CrsfThrottle = 1500;
+	int _CrsfYaw = 0;
+	int _CrsfMode = 0;
+	int _CrsfLight = 0;
+	int _CrsfReturnHome = 0;
+	int _CrsfArmed = 0;
+
+	CRSFRadio.GetData(&_CrsfRoll, &_CrsfPitch, &_CrsfThrottle, &_CrsfYaw, &_CrsfMode, &_CrsfLight, &_CrsfReturnHome, &_CrsfArmed);
+
+	bool thrIdle = false;
+	//检查油门是否居中
+	if (_CrsfThrottle > (cfg.param.rcl_thr_mid - cfg.param.rcl_thr_dead) && _CrsfThrottle < (cfg.param.rcl_thr_mid + cfg.param.rcl_thr_dead))
+	{
+		thrIdle = true;
+	}
+	(void)thrIdle;
+	bool rolIdle = false;
+	//检查roll是否居中
+	if (_CrsfRoll > (cfg.param.rcl_rol_mid - cfg.param.rcl_rol_dead) && _CrsfRoll < (cfg.param.rcl_rol_mid + cfg.param.rcl_rol_dead))
+	{
+		rolIdle = true;
+	}
+	bool pitIdle = false;
+	if (_CrsfPitch > (cfg.param.rcl_pit_mid - (cfg.param.rcl_pit_dead + /*遥控器校准*/10)) && _CrsfPitch < (cfg.param.rcl_pit_mid + (cfg.param.rcl_pit_dead + /*遥控器校准*/10)))
+	//检查pitch是否居中
+	{
+		pitIdle = true;
+	}
+
+	static float max_thr = 0; //最大油门
+	static float min_thr = 0; //最小油门
+	static float thr = 0.0;
+
+	//检查飞机状态是否异常
+	bool fail = false;
+    if (!app.IsArmed())
+    {
+    	fail = true;
+    }
+
+    if (fail)
+    {
+		motor_speeds[0] = 1000;
+		motor_speeds[1] = 1000;
+		motor_speeds[2] = 1000;
+		motor_speeds[3] = 1000;
+
+		max_thr = 0;
+		min_thr = 0;
+		thr = 0.0;
+
+		return;
+    }
+
+
+	float throttle = ChannelNormalize(1, _CrsfThrottle, cfg.param.rcl_thr_pull, cfg.param.rcl_thr_mid, cfg.param.rcl_thr_push, cfg.param.rcl_thr_dead);
+
+	if (!thrIdle)
+	{
+		if (throttle > 0 && throttle > thr)
+		{
+		    thr     = throttle;
+		    max_thr = thr;      // 不变量：加油门后 max_thr 恒等于 thr
+		    min_thr = 0;
+		}
+		else if (throttle < 0 && throttle < min_thr)
+		{
+		    min_thr = throttle;
+		    thr     = max_thr + min_thr;
+		}
+	}
+
+	motor_speeds[MOTOR_FL] = thr;
+	motor_speeds[MOTOR_FR] = thr;
+	motor_speeds[MOTOR_BL] = thr;
+	motor_speeds[MOTOR_BR] = thr;
+
+	for (int i = 0; i < 4; i++) {
+		// 转速限幅
+		if (motor_speeds[i] < 0.02)
+		{
+			motor_speeds[i] = 0.02;
+		}
+	}
+
+}
 
