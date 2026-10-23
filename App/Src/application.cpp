@@ -878,7 +878,7 @@ void Application::RadioUpdate()
     	}
 
     	//前避障
-    	if (GetFrontDistance() < 2.0 && GetFrontDistance() > 0.2)
+    	if (GetFrontDistance() < 2.0 && GetFrontDistance() > 0.2 && cfg.param.sys_fly_mode != 3)
     	{
     		if (speed < 0)
     		{
